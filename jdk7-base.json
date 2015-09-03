@@ -1,0 +1,33 @@
+{
+  "variables": {
+    "version": ""
+  },
+  "builders": [
+    {
+      "type": "docker",
+      "image": "rpaturu/ubuntu-base:{{user `version`}}",
+      "pull": true,
+      "commit": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible-local",
+      "playbook_file": "playbooks/local.yml",
+      "role_paths": [
+        "roles/java"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "docker-tag",
+      "repository": "rpaturu/jdk7-base",
+      "tag": "{{user `version`}}",
+      "force": true
+    },
+    {
+      "type": "docker-push"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# file: roles/java/tasks/main.yml
+
+- name: Install open jdk 7
+  apt: name={{ item }} state=latest
+  with_items:
+    - openjdk-7-jre
+    - openjdk-7-jdk
