@@ -23,7 +23,8 @@
     {
       "type": "docker-tag",
       "repository": "rpaturu/jdk7-base",
-      "tag": "{{user `version`}}"
+      "tag": "{{user `version`}}",
+      "force": true
     }
   ]
 }
