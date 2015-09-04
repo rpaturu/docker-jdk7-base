@@ -21,12 +21,9 @@
   ],
   "post-processors": [
     {
-      "type": "docker-import",
+      "type": "docker-tag",
       "repository": "rpaturu/jdk7-base",
       "tag": "{{user `version`}}"
-    },
-    {
-      "type": "docker-push"
     }
   ]
 }
