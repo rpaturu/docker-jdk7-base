@@ -1,11 +1,12 @@
 {
   "variables": {
+    "base_version": ""
     "version": ""
   },
   "builders": [
     {
       "type": "docker",
-      "image": "rpaturu/ubuntu-base:{{user `version`}}",
+      "image": "rpaturu/ubuntu-base:{{user `base_version`}}",
       "pull": true,
       "commit": true
     }
