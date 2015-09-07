@@ -1,6 +1,6 @@
 {
   "variables": {
-    "base_version": ""
+    "base_version": "",
     "version": ""
   },
   "builders": [
